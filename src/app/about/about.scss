@@ -1,0 +1,67 @@
+.about-container {
+  min-height: calc(100vh - var(--footer-height));
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e2e8f0 50%,
+    #cbd5e1 100%
+  );
+}
+
+.about-card {
+  background: white;
+  padding: 3rem;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 1s ease;
+}
+
+.about-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+// .about-actions {
+//   margin-top: 2.5rem;
+//   text-align: center;
+// }
+
+// a[mat-raised-button] {
+//   padding: 0.8rem 2rem;
+//   border-radius: 8px;
+// }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

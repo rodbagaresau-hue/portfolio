@@ -1,0 +1,70 @@
+.hero-container {
+  min-height: calc(100vh - var(--footer-height)); /* Adjust for toolbar height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+
+  background: linear-gradient(
+    135deg,
+    #f5f7fa 0%,
+    #e2e8f0 50%,
+    #cbd5e1 100%
+  );
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #334155;
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #475569;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  color: #64748b;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+// .hero-btn {
+//   padding: 0.8rem 2rem;
+//   font-size: 1rem;
+//   border-radius: 8px;
+// }
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

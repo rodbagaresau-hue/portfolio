@@ -1,0 +1,77 @@
+.projects-container {
+  min-height: calc(100vh - var(--footer-height)); /* Adjust for toolbar height */
+  padding: 3rem 2rem;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e2e8f0 50%,
+    #cbd5e1 100%
+  );
+}
+
+.projects-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.projects-subtitle {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 3rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 1s ease;
+}
+
+mat-card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+mat-card-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+mat-card-content p {
+  font-size: 1.05rem;
+  color: #334155;
+  margin-top: 1rem;
+}
+
+mat-card-actions {
+  margin-top: 1.5rem;
+}
+
+a[mat-raised-button] {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,10 @@
+@use '@angular/material' as mat;
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  background-color: #1e88e5 !important;
+  color: rgb(0, 4, 56);
+}
