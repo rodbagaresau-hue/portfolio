@@ -55,7 +55,7 @@ jobs:
 
       - name: Sync build to S3
         run: |
-          aws s3 sync ./dist s3://${{ secrets.S3_BUCKET }} --acl bucket-owner-full-control --delete
+          aws s3 sync dist/portfolio-website/browser s3://${{ secrets.S3_BUCKET }} --acl bucket-owner-full-control --delete
 
       - name: Invalidate CloudFront
         run: |
