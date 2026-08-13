@@ -53,10 +53,15 @@ jobs:
           path: dist/portfolio-website/browser
           retention-days: 7
 
+      - name: Show branch input
+        run: |
+            echo "Branch input: ${{ github.event.inputs.branch }}"
+
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.branch == 'main'
+    if: github.event_name == 'workflow_dispatch'
     environment:
       name: production
       url: https://roddaniels.com
