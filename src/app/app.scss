@@ -1,4 +1,8 @@
-@use '@angular/material' as mat;
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .example-spacer {
   flex: 1 1 auto;
@@ -7,4 +11,55 @@
 mat-toolbar {
   background-color: #1e88e5 !important;
   color: rgb(0, 4, 56);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+footer {
+  margin-top: auto;
+  background: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* Desktop links */
+mat-toolbar a[mat-button] {
+  margin-left: 8px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  mat-toolbar span {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: inline-flex;
+  }
 }

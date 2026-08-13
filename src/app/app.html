@@ -3,11 +3,24 @@
 
   <span class="example-spacer"></span>
 
-  <a mat-button routerLink="/home">Home</a>
-  <a mat-button routerLink="/about">About</a>
-  <a mat-button routerLink="/projects">Projects</a>
-  <a mat-button routerLink="/contact">Contact</a>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    <a mat-button routerLink="/home">Home</a>
+    <a mat-button routerLink="/about">About</a>
+    <a mat-button routerLink="/projects">Projects</a>
+    <a mat-button routerLink="/contact">Contact</a>
+  </nav>
+
+  <button mat-icon-button class="mobile-menu" [matMenuTriggerFor]="mobileMenu" aria-label="Open navigation menu">
+    <mat-icon>menu</mat-icon>
+  </button>
 </mat-toolbar>
+
+<mat-menu #mobileMenu="matMenu">
+  <button mat-menu-item routerLink="/home">Home</button>
+  <button mat-menu-item routerLink="/about">About</button>
+  <button mat-menu-item routerLink="/projects">Projects</button>
+  <button mat-menu-item routerLink="/contact">Contact</button>
+</mat-menu>
 
 <main>
   <router-outlet></router-outlet>
