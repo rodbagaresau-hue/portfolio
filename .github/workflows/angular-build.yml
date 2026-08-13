@@ -74,6 +74,12 @@ jobs:
         with:
           ref: ${{ github.event.inputs.branch || github.ref }}
 
+      - name: Debug OIDC token
+        run: |
+          echo "Repo: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Environment: production"
+
       - name: 2. Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
