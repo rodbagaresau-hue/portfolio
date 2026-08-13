@@ -1,6 +1,7 @@
 .about-container {
   min-height: calc(100vh - var(--footer-height));
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: 3rem 2rem;
   background: linear-gradient(
@@ -43,16 +44,6 @@
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
-
-// .about-actions {
-//   margin-top: 2.5rem;
-//   text-align: center;
-// }
-
-// a[mat-raised-button] {
-//   padding: 0.8rem 2rem;
-//   border-radius: 8px;
-// }
 
 /* Fade-in animation */
 @keyframes fadeIn {
