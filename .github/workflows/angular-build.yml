@@ -24,41 +24,36 @@ jobs:
       (github.event_name == 'pull_request_review' && github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'main') || (github.event_name == 'workflow_dispatch')
 
     steps:
-      - name: Checkout
+      - name: 1. Checkout
         uses: actions/checkout@v5
         with:
           ref: ${{ github.event.inputs.branch || github.ref }}
 
-      - name: Setup Node.js
+      - name: 2. Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
-      - name: Check Node version
+      - name: 3. Check Node version
         run: node -v
 
-      - name: Install dependencies
+      - name: 4. Install dependencies
         run: npm ci
 
-      - name: Run tests
+      - name: 5. Run tests
         run: npm run test:ci
 
-      - name: Build Angular
+      - name: 6. Build Angular
         run: npm run build
 
-      - name: Upload build artifact
+      - name: 7. Upload build artifact
         uses: actions/upload-artifact@v5
         with:
           name: dist
           path: dist/portfolio-website/browser
           retention-days: 7
-
-      - name: Show branch input
-        run: |
-            echo "Branch input: ${{ github.event.inputs.branch }}"
-
 
   deploy:
     needs: build
@@ -71,31 +66,31 @@ jobs:
       url: https://roddaniels.com
 
     steps:
-      - name: Checkout
+      - name: 1. Checkout
         uses: actions/checkout@v5
         with:
           ref: ${{ github.event.inputs.branch || github.ref }}
 
-      - name: Configure AWS credentials
+      - name: 2. Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
     
-      - name: Download build artifact
+      - name: 3. Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist/portfolio-website/browser
 
-      - name: List build files
+      - name: 4. List build files
         run: ls -laR dist || true
 
-      - name: Sync build to S3
+      - name: 5. Sync build to S3
         run: |
           aws s3 sync dist/portfolio-website/browser s3://${{ secrets.S3_BUCKET }} --acl bucket-owner-full-control --delete
 
-      - name: Invalidate CloudFront
+      - name: 6. Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
