@@ -55,11 +55,6 @@ jobs:
           path: dist/portfolio-website/browser
           retention-days: 7
 
-      - name: 8. Show branch input
-        run: |
-            echo "Branch input: ${{ github.event.inputs.branch }}"
-
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -71,26 +66,31 @@ jobs:
       url: https://roddaniels.com
 
     steps:
-      - name: 1. Configure AWS credentials
+      - name: 1. Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
+
+      - name: 2. Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
     
-      - name: 2. Download build artifact
+      - name: 3. Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist/portfolio-website/browser
 
-      - name: 3. List build files
+      - name: 4. List build files
         run: ls -laR dist || true
 
-      - name: 4. Sync build to S3
+      - name: 5. Sync build to S3
         run: |
           aws s3 sync dist/portfolio-website/browser s3://${{ secrets.S3_BUCKET }} --acl bucket-owner-full-control --delete
 
-      - name: 5. Invalidate CloudFront
+      - name: 6. Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
