@@ -5,6 +5,11 @@ on:
     branches: [ "dev", "main" ]
   pull_request_review:
     types: [ submitted ]
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -40,13 +45,16 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist
-          path: dist
+          path: dist/portfolio-website/browser
+          retention-days: 7
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    # environment: production
+    if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    environment:
+      name: production
+      url: https://roddaniels.com
 
     steps:
       - name: Checkout
@@ -63,7 +71,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-          path: dist
+          path: dist/portfolio-website/browser
 
       - name: List build files
         run: ls -laR dist || true
