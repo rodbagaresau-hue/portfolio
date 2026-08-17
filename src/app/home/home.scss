@@ -1,14 +1,14 @@
 .hero-container {
-  min-height: calc(100vh - var(--footer-height)); /* Adjust for toolbar height */
+  min-height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 2rem;
   background: linear-gradient(
     135deg,
-    #f5f7fa 0%,
-    #e2e8f0 50%,
-    #cbd5e1 100%
+    #f0f2f5 0%,
+    #e8eaef 50%,
+    #dfe2ea 100%
   );
 }
 
@@ -17,36 +17,37 @@
   padding: 3rem;
   max-width: 900px;
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   animation: fadeIn 1s ease;
   text-align: center;
+  border: 1px solid #e8eaef;
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1e293b;
+  color: #000000;
 }
 
 .hero-subtitle {
   font-size: 1.6rem;
   font-weight: 500;
   margin-bottom: 1rem;
-  color: #334155;
+  color: #000000;
 }
 
 .hero-tagline {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: #475569;
+  color: #546e7a;
 }
 
 .hero-description {
   font-size: 1.1rem;
   margin-bottom: 2.5rem;
-  color: #64748b;
+  color: #546e7a;
 }
 
 .hero-actions {
