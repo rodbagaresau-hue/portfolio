@@ -1,14 +1,14 @@
 .about-container {
-  min-height: calc(100vh - var(--footer-height));
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 3rem 2rem;
   background: linear-gradient(
     135deg,
-    #f8fafc 0%,
-    #e2e8f0 50%,
-    #cbd5e1 100%
+    #f0f2f5 0%,
+    #e8eaef 50%,
+    #dfe2ea 100%
   );
 }
 
@@ -17,15 +17,16 @@
   padding: 3rem;
   max-width: 900px;
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   animation: fadeIn 1s ease;
+  border: 1px solid #e8eaef;
 }
 
 .about-title {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #1e293b;
+  color: #000000;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -33,14 +34,14 @@
 .section-title {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #334155;
+  color: #000000;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .about-description {
   font-size: 1.15rem;
-  color: #475569;
+  color: #546e7a;
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }

@@ -1,25 +1,25 @@
 .projects-container {
-  min-height: calc(100vh - var(--footer-height)); /* Adjust for toolbar height */
+  min-height: auto;
   padding: 3rem 2rem;
   text-align: center;
   background: linear-gradient(
     135deg,
-    #f8fafc 0%,
-    #e2e8f0 50%,
-    #cbd5e1 100%
+    #f0f2f5 0%,
+    #e8eaef 50%,
+    #dfe2ea 100%
   );
 }
 
 .projects-title {
   font-size: 2.6rem;
   font-weight: 700;
-  color: #1e293b;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
 .projects-subtitle {
   font-size: 1.2rem;
-  color: #475569;
+  color: #546e7a;
   margin-bottom: 3rem;
 }
 
@@ -33,25 +33,26 @@
 
 .project-card {
   padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   animation: fadeIn 1s ease;
+  border: 1px solid #e8eaef;
 }
 
 mat-card-title {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #2c3e50;
 }
 
 mat-card-subtitle {
   font-size: 1rem;
-  color: #64748b;
+  color: #546e7a;
 }
 
 mat-card-content p {
   font-size: 1.05rem;
-  color: #334155;
+  color: #546e7a;
   margin-top: 1rem;
 }
 
