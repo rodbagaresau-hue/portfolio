@@ -14,19 +14,19 @@
     </p>
 
     <div class="hero-actions">
-        <a
-          matButton="filled"
-          color="primary"
-          routerLink="/projects"
-        > Explore My Work
-        </a>
+        <p-button
+          label="Explore My Work"
+          severity="primary"
+          raised
+          [routerLink]="['/projects']"
+        ></p-button>
 
-        <a
-          matButton="filled"
-          color="accent"
-          routerLink="/about"
-        > See My Skills
-        </a>
+        <p-button
+          label="See My Skills"
+          severity="secondary"
+          raised
+          [routerLink]="['/about']"
+        ></p-button>
     </div>
   </div>
 </div>
