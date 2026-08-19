@@ -43,10 +43,10 @@
   margin-bottom: 2.5rem;
 }
 
-.contact-btn {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  border-radius: 8px;
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 /* Fade-in animation */
