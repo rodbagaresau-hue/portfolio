@@ -46,6 +46,22 @@
   margin-bottom: 1.5rem;
 }
 
+.skills-container, .cert-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.skills-container, .cert-container p-chip {
+  --p-chip-background: #27395a;
+  --p-chip-color: #ebf3fc;
+  --p-chip-border-color: #bfd7ff;
+  --p-chip-padding: 0.5rem 0.8rem;
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
