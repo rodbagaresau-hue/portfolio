@@ -25,7 +25,11 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/material-theme.scss", "src/styles.css"],
+            "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "src/material-theme.scss",
+              "src/styles.css"
+            ],
             "outputMode": "static",
             "security": {
               "allowedHosts": []
